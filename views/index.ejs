@@ -1,0 +1,58 @@
+<%- include( "./partials/header.ejs" ) %>
+    
+<% if( locals.blog ) { %>
+    <div class="container">
+        <h2><%= blog.title %></h2>
+        <p>
+            Posted <%= `${ blog.datePosted.toLocaleTimeString( 'en-US', { hour: 'numeric', minute: '2-digit', hour12: true } ) } · 
+            ${ months[ blog.datePosted.getMonth() ] } ${ blog.datePosted.getDate() }, 
+            ${ blog.datePosted.getFullYear() }` %>
+            <% if( blog.isEdited ) { %>
+                | Edited <%= `${ blog.dateEdited.toLocaleTimeString( 'en-US', { hour: 'numeric', minute: '2-digit', hour12: true } ) } · 
+                ${ months[ blog.dateEdited.getMonth() ] } ${ blog.dateEdited.getDate() }, 
+                ${ blog.dateEdited.getFullYear() }` %>
+            <% } %>
+        </p>
+        <p class="blog-content">
+            <%= blog.content %>
+        </p>
+        <div class="d-flex mb-3">
+            <form action="/<%= blog.id %>/delete" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="btn btn-danger">Delete Post</button>
+            </form>
+            <button type="button" class="edit-btn btn btn-outline-primary ms-2">Edit Post</button>
+        </div>
+        <div class="container edit-blog-post-input border border-dark rounded d-none">
+            <form action="/<%= blog.id %>/edit" method="post">
+                <input type="hidden" name="_method" value="patch">
+                <div class="mb-3">
+                    <input class="post-title-input form-control form-control-lg me-2" type="text" name="title" placeholder="Title" value="<%= blog.title %>">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" name="content" id="content" rows="20" wrap="hard"><%= blog.content %></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Update Post</button>
+                    <button type="button" class="edit-cancel-btn btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+<% } else { %>
+    <% if( locals.posts ) { %>
+        <div class="container">
+            <h2>Blog Posts</h2>
+            <ul class="blog-posts">
+                <% posts.forEach( post => { %>
+                    <li>
+                        <p><a href="/<%= post.id %>"><%= post.title %></a></p>
+                    </li>
+                <% } ); %>
+            </ul>
+        </div>
+    <% } %>
+<% } %>
+
+<%- include( "./partials/footer.ejs" ) %>

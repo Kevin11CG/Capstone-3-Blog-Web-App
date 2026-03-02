@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+main {
+    margin-top: 70px;
+}
+.blog-content {
+    white-space: pre-line;
+}
+.new-blog-post-input {
+    padding: 20px;
+    width: 50%;
+    height: auto;
+}
+.edit-blog-post-input {
+    padding: 20px;
+}
+.post-content-input {
+    height: 400px;
+}
