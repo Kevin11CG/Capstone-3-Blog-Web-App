@@ -1,19 +1,15 @@
-if ( globalThis.history.replaceState ) {
-    globalThis.history.replaceState( null, null, globalThis.location.href );
-}
+$( document ).ready( function() {
+    if ( globalThis.history.replaceState ) {
+        globalThis.history.replaceState( null, null, globalThis.location.href );
+    }
 
-$( ".new-post-btn" ).on( "click", function ( e ) {    
-    $( ".new-blog-post-input" ).toggleClass( "d-none" );    
-} );
-
-$( ".post-cancel-btn" ).on( "click", function ( e ) {
-    $( ".new-blog-post-input" ).addClass( "d-none" );
-} );
-
-$( ".edit-btn" ).on( "click", function ( e ) {
-    $( ".edit-blog-post-input" ).toggleClass( "d-none" );
-} );
-
-$( ".edit-cancel-btn" ).on( "click", function ( e ) {
-    $( ".edit-blog-post-input" ).addClass( "d-none" );
+    const submitBtn = $( ".post-submit-btn" ),
+        titleInput = $( ".post-title-input" ),
+        contentInput = $( ".post-content-input" );
+    submitBtn.on( "click", ( event ) => {
+        if ( titleInput.val().trim() === "" || contentInput.val().trim() === "" ) {
+            event.preventDefault();
+            alert( "The title and content of the post cannot be empty." );
+        }
+    } );
 } );
