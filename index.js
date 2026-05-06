@@ -1,11 +1,10 @@
 import express from "express";
-import bodyParser from "body-parser";
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 app.use( express.static( "public" ) );
-app.use( bodyParser.urlencoded( { extended: true } ) );
+app.use( express.urlencoded( { extended: true } ) );
 
 function Post( id, title, datePosted, content, isEdited, dateEdited ) {
     this.id = id;
