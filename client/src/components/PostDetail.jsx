@@ -51,9 +51,9 @@ function PostDetail() {
         }
     };
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>{error}</div>;
-    if (!post) return <div>Post not found</div>;
+    if (loading) return <div className="text-center">Loading...</div>;
+    if (error) return <div className="alert alert-danger">{error}</div>;
+    if (!post) return <div className="alert alert-info">Post not found</div>;
 
     return (
         <div className="container border border-dark rounded">
