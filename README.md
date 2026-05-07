@@ -1,6 +1,6 @@
 # Blog Web App
 
-A simple, elegant blog application built with Node.js and Express. Create, edit, delete, and search your blog posts with ease.
+A modern blog application with a React frontend and Node.js/Express API backend. Create, edit, delete, and search your blog posts with a responsive, interactive interface.
 
 ## Features
 
@@ -10,42 +10,69 @@ A simple, elegant blog application built with Node.js and Express. Create, edit,
 - **Search** - Search through all posts by title or content
 - **Responsive Design** - Built with Bootstrap for mobile-friendly viewing
 - **Timestamps** - Automatic post creation and edit timestamps
+- **Single Page Application** - Fast, client-side routing with React Router
 
 ## Technologies Used
 
-- **Backend**: Node.js with Express.js
-- **Frontend**: EJS templating, Bootstrap 5, jQuery
-- **Styling**: Custom CSS with Bootstrap integration
+- **Backend**: Node.js with Express.js (REST API)
+- **Frontend**: React with Vite, React Router
+- **Styling**: Bootstrap 5, Custom CSS
 - **Data Storage**: In-memory (no database, yet)
 
 ## Project Structure
 
 ```
-├── index.js              # Main server and route handlers
-├── package.json          # Project dependencies
-├── public/
-│   ├── scripts/
-│   │   └── main.js       # Client-side JavaScript
-│   └── styles/
-│       └── main.css      # Custom styling
-└── views/
-    ├── index.ejs         # Main page and post display
-    ├── input.ejs         # Create/edit post form
-    └── partials/
-        ├── header.ejs    # Navigation bar and HTML header
-        └── footer.ejs    # Footer and scripts
+├── README.md
+├── client/               # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/   # React components
+│   │   │   ├── Header.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── PostDetail.jsx
+│   │   │   ├── CreatePost.jsx
+│   │   │   ├── EditPost.jsx
+│   │   │   └── Search.jsx
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── main.jsx
+│   ├── index.html
+│   └── package.json
+└── server/               # Express API backend
+    ├── index.js          # API routes and handlers
+    └── package.json      # Backend dependencies
 ```
 
 ## Installation
 
 1. **Clone or download the project** to your local machine.
 
-2. **Install dependencies**:
-   `npm install`
+2. **Install backend dependencies**:
+   ```
+   cd server
+   npm install
+   ```
 
-3. **Start the server**:
-   `npm start`, `node app.js`, or `nodemon app.js`
-   The application will be available at `http://localhost:3000`
+3. **Install frontend dependencies**:
+   ```
+   cd ../client
+   npm install
+   ```
+
+4. **Start the backend server**:
+   ```
+   cd server
+   npm start
+   ```
+   The API will be available at `http://localhost:8080`
+
+5. **Start the frontend development server** (in a new terminal):
+   ```
+   cd client
+   npm run dev
+   ```
+   The React app will be available at `http://localhost:5173`
 
 ## Usage
 
@@ -73,6 +100,17 @@ A simple, elegant blog application built with Node.js and Express. Create, edit,
 1. Enter a keyword in the search bar at the top
 2. Click **"Search"** to find posts matching your query
 3. Search works on both titles and content
+
+## API Endpoints
+
+The backend provides the following REST API endpoints:
+
+- `GET /api/posts` - Retrieve all posts
+- `GET /api/posts/:id` - Retrieve a specific post by ID
+- `POST /api/posts` - Create a new post (body: `{title, content}`)
+- `PUT /api/posts/:id` - Update an existing post (body: `{title, content}`)
+- `DELETE /api/posts/:id` - Delete a post by ID
+- `GET /api/search?q=query` - Search posts by title or content
 
 ## Notes
 
