@@ -22,26 +22,35 @@ A modern blog application with a React frontend and Node.js/Express API backend.
 ## Project Structure
 
 ```
-├── README.md
-├── client/               # React frontend
+Capstone-3-Blog-Web-App/
+├── client/                      # React frontend
 │   ├── public/
 │   ├── src/
-│   │   ├── components/   # React components
+│   │   ├── components/          # React components
+│   │   │   ├── CreatePost.jsx
+│   │   │   ├── EditPost.jsx
 │   │   │   ├── Header.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Home.jsx
 │   │   │   ├── PostDetail.jsx
-│   │   │   ├── CreatePost.jsx
-│   │   │   ├── EditPost.jsx
 │   │   │   └── Search.jsx
+|   |   ├── api.js               # API export for frontend-backend communication
+|   |   ├── App.css
 │   │   ├── App.jsx
-│   │   ├── App.css
+│   │   ├── index.css
 │   │   └── main.jsx
+|   ├── eslint.config.js         # Frontend linting configuration
 │   ├── index.html
-│   └── package.json
-└── server/               # Express API backend
-    ├── index.js          # API routes and handlers
-    └── package.json      # Backend dependencies
+|   ├── package-lock.json        # Frontend lockfile
+│   ├── package.json             # Frontend dependencies
+|   └── vite.config.js           # Frontend build configuration
+├── server/                      # Express API backend
+|   ├── index.js                 # API routes and handlers
+|   ├── package-lock.json        # Backend lockfile
+|   └── package.json             # Backend dependencies
+├── .gitignore                   # Files to ignore in Git
+├── package.json                 # Root package.json for workspace commands
+└── README.md              
 ```
 
 ## Installation
@@ -60,19 +69,16 @@ A modern blog application with a React frontend and Node.js/Express API backend.
    npm install
    ```
 
-4. **Start the backend server**:
-   ```
-   cd server
-   npm start
-   ```
-   The API will be available at `http://localhost:8080`
+4. **Install nodemon if not already installed**:
+   If you don't have nodemon installed, you can install it globally with `npm install -g nodemon`
+   This will start the backend server with automatic restarts on code changes.
 
-5. **Start the frontend development server** (in a new terminal):
+5. **Start the backend server and frontend development server**:
    ```
-   cd client
+   cd ../
    npm run dev
    ```
-   The React app will be available at `http://localhost:5173`
+   The API will be available at `http://localhost:8080` and the React app will be available at `http://localhost:5173`
 
 ## Usage
 
