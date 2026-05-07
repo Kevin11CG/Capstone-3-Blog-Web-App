@@ -49,6 +49,7 @@ Capstone-3-Blog-Web-App/
 |   ├── package-lock.json        # Backend lockfile
 |   └── package.json             # Backend dependencies
 ├── .gitignore                   # Files to ignore in Git
+├── package-lock.json            # Root lockfile for workspace dependencies
 ├── package.json                 # Root package.json for workspace commands
 └── README.md              
 ```
