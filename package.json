@@ -4,7 +4,7 @@
   "description": "A modern blog application with a React frontend and Node.js/Express API backend. Create, edit, delete, and search your blog posts with a responsive, interactive interface.",
   "main": "index.js",
   "scripts": {
-    "server": "npm start --prefix server",
+    "server": "npm run dev --prefix server",
     "client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
