@@ -1,0 +1,26 @@
+{
+  "name": "capstone-3-blog-web-app",
+  "version": "1.0.0",
+  "description": "A modern blog application with a React frontend and Node.js/Express API backend. Create, edit, delete, and search your blog posts with a responsive, interactive interface.",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm start --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevin11CG/Capstone-3-Blog-Web-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Kevin11CG/Capstone-3-Blog-Web-App/issues"
+  },
+  "homepage": "https://github.com/Kevin11CG/Capstone-3-Blog-Web-App#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
