@@ -43,7 +43,8 @@ main {
     padding: 20px;
     height: auto;
 }
-
 .post-content-input {
-    height: 400px;
+    @media (min-width: 992px) {
+        height: 400px;
+    }
 }

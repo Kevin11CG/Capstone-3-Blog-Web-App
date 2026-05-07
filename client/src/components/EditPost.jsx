@@ -47,11 +47,11 @@ function EditPost() {
                 <div className="mb-3">
                     <input
                         className="post-title-input form-control form-control-lg"
+                        name="title"
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         placeholder="Title"
-                        name="title"
                         autoFocus
                         autoComplete="off"
                     />
@@ -63,7 +63,7 @@ function EditPost() {
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder="What's happening..."
-                        rows="3"
+                        rows="7"
                     />
                 </div>
                 <div>

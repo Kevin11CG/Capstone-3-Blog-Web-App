@@ -44,7 +44,7 @@ function CreatePost() {
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder="What's happening..."
-                        rows="3"
+                        rows="7"
                     />
                 </div>
                 <div>
